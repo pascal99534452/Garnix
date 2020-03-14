@@ -1,0 +1,22 @@
+{
+  "name": "unitedmc",
+  "version": "1.0.0",
+  "description": "de unitedmc discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "keywords": [
+    "unitedmc",
+    "bot"
+  ],
+  "author": "Pascall",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

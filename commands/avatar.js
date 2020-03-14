@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args) => {
     var botEmbed = new discord.RichEmbed()
         .setTitle("Avatar" + message.author)
         .setImage(message.author.displayAvatarURL)
-        .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
-        .setColor('#ff0000');
+        .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+        .setColor('#ffaa00');
 
     return message.channel.send(botEmbed);
 

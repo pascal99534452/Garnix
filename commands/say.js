@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  if (!message.member.roles.some(r => ["♛ | Founder", "✘ | Management", "✘ | DC Staff"].includes(r.name)))
+  if (!message.member.roles.some(r => ["💼 ・Beheerder", "💼 ・Management", "💼 ・Admin", "💼 ・Moderator"].includes(r.name)))
     return message.reply(":no_entry: | Jij hebt geen toegang tot dit commando!");
   const sayMessage = args.join(" ");
 

@@ -9,8 +9,8 @@ module.exports.run = async (bot, message, args) => {
         .addField("Bot Naam", bot.user.username)
         .setThumbnail(botIcon)
         .addField("Gemaakt op:", bot.user.createdAt)
-        .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
-        .setColor('#ff0000');
+        .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+        .setColor('#ffaa00');
 
     return message.channel.send(botEmbed);
 

@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
     // Id van category van tickets.
-    const categoryId = "687253002519707689";
+    const categoryId = "637680800736870410";
 
     // Als bericht in ticket kanaal is dan verwijder kanaal ander zend bericht
     if (message.channel.parentID == categoryId) {
@@ -21,8 +21,8 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("Ticket Systeem")
         .addField("Ticket maker:", message.channel.name)
         .addField("Gesloten door:", message.author)
-        .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
-        .setColor('#ff0000');
+        .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+        .setColor('#ffaa00');
 
     // Vind kanaal voor de logs.
     var logChannel = message.guild.channels.find("name", "⛔・logs");

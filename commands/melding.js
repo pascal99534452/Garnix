@@ -12,15 +12,15 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Melding Help")
             .setColor("#ff0000")
             .setDescription(`Om een melding te maken voer je het volgende uit: \n !melding Titel ${splitser} Bericht ${splitser} Kleur ${splitser} Kanaal`)
-            .setColor('#ff0000')
-            .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
+            .setColor('#ffaa00')
+            .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
 
         return message.channel.send(useMessage);
     }
 
     args = args.join(" ").split(splitser);
 
-    if (args[2] == undefined) args[2] = "#ff0000"
+    if (args[2] == undefined) args[2] = "#ffaa00"
     if (args[3] == undefined) args[3] = "💼・staffchat"
 
     var options = {
@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle(`${options.titel}`)
     .setColor(options.kleur)
     .setDescription(`${options.bericht}`)
-    .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
+    .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
 
     var announcementChannel = message.guild.channels.find(`name`, options.kanaal);
     if (!announcementChannel) return message.channel.send("Ik kan het kanaal niet vinden! :frowning:")

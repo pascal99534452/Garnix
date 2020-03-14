@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
     // ID van de categorie van de tickets.
-    const categoryId = "687253002519707689";
+    const categoryId = "637680800736870410";
 
     // Verkrijg Gebruikersnaam
     var userName = message.author.username;
@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     await message.guild.channels.forEach((channel) => {
 
         // Als ticket is gemaakt, zend bericht.
-        if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
+        if (channel.name == userName.toLowerCase()) {
 
             message.channel.send(":no_entry: | Je hebt al een ticket geopend!");
 
@@ -33,8 +33,8 @@ module.exports.run = async (bot, message, args) => {
     var embedCreateTicket = new discord.RichEmbed()
         .setTitle("Ticket Systeem")
         .setDescription("Je support kanaal is succesvol aangemaakt!")
-        .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
-        .setColor('#ff0000');
+        .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+        .setColor('#ffaa00');
 
     message.channel.send(embedCreateTicket)
 
@@ -62,10 +62,11 @@ module.exports.run = async (bot, message, args) => {
             });
 
             var embedParent = new discord.RichEmbed()
-                .setTitle("Ticket Systeem")
-                .setDescription("Zet hier je bericht in, Een stafflid helpt je zo snel mogelijk!")
-                .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
-                .setColor('#ff0000');
+                .setTitle("Garnix Network")
+                .setDescription("Heeft u even geduld, een stafflid zal z.s.m komen. Als er binnen 30 minuten niet gereageerd word, mag je taggen. We zullen uw ticket z.s.m behandelen.")
+                .addField("Ticket Eigenaar:", userName)
+                .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+                .setColor('#ffaa00');
 
             settedParent.send(embedParent);
         }).catch(err => {

@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
         .setColor("#ff0000")
         .addField("Idee:", idee)
         .addField("Ingezonden door:", message.author)
-        .setColor('#ff0000')
-        .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
+        .setColor('#ffaa00')
+        .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
  
     // Vind het kanaal.
     var ideeChannel = message.guild.channels.find(`name`, "👀・suggesties");

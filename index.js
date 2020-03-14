@@ -30,7 +30,7 @@ bot.on("ready", async () => {
 
    console.log(`${bot.user.username} is online!`)
 
-   bot.user.setActivity("Outlandz's Community", { type: "PLAYING" });
+   bot.user.setActivity("Garnix Network", { type: "PLAYING" });
 
 })
 
@@ -63,8 +63,8 @@ bot.on("guildMemberAdd", member => {
    var joinMessage = new discord.RichEmbed()
       .setTitle(`Welkom  ${member.user.tag}!`)
       .setDescription("Veel plezier op onze discord server.")
-      .setColor('#ff0000')
-      .setFooter("Outlandz's Community", message.guild.iconURL).setTimestamp()
+      .setColor('#ffaa00')
+      .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
       .setThumbnail(member.user.displayAvatarURL);
 
    channel.send(joinMessage);

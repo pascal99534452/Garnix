@@ -54,22 +54,23 @@ bot.on("message", async message => {
 
    if (commands) commands.run(bot, message, arguments);
 
-});
+})
+
 bot.on("guildMemberAdd", member => {
 
-   const channel = member.guild.channels.find("name", "welkom");
+   const channel = member.guild.channels.find("name", "👋🏻・welcome");
    if (!channel) console.log("Kan het kanaal niet vinden.");
 
    var joinEmbed = new discord.RichEmbed()
-       .setTitle(`Welkom  ${member.user.tag}!`)
-       .setDescription("Veel plezier op onze discord server.")
-       .setColor('#ffaa00')
-       .setFooter("Garnix Network", guild.displayAvatarURL).setTimestamp()
-       .setThumbnail(member.user.displayAvatarURL);
+      .setColor('#ffaa00')
+      .setThumbnail(member.user.displayAvatarURL)
+      .setTitle("Welkom, " + member.user.username)
+      .setDescription("Welkom op onze discord server!")
+      .setFooter("Garnix Network", bot.user.displayAvatarURL).setTimestamp()
 
    channel.send(joinEmbed);
 
-});
+})
 
 bot.on("guildMemberAdd", member => {
 

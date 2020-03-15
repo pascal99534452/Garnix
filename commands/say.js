@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   if (!message.member.roles.some(r => ["💼 ・Beheerder", "💼 ・Management", "💼 ・Admin", "💼 ・Moderator"].includes(r.name)))
@@ -7,7 +7,12 @@ module.exports.run = async (bot, message, args) => {
 
   message.delete().catch(O_o => { });
 
-  message.channel.send(sayMessage);
+  var embed = new discord.RichEmbed()
+  .setDescription(sayMessage)
+  .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+  .setColor('#ffaa00');
+
+  message.channel.send(embed);
 }
 
 module.exports.help = {

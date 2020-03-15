@@ -1,29 +1,29 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
- 
+
 const fs = require("fs")
- 
+
 const bot = new discord.Client();
 bot.commands = new discord.Collection
- 
+
 fs.readdir("./commands/", (err, files) => {
- 
-    if (err) console.log(err);
- 
-    var jsFiles = files.filter(f => f.split(".").pop() === "js");
- 
-    if (jsFiles.length <=0) {
-        console.log("Kon geen files vinden");
-        return;
-    }
- 
-    jsFiles.forEach((f, i) => {
- 
-        var fileGet = require(`./commands/${f}`);
-        console.log(`De file ${f} is geladen!`);
-       
-        bot.commands.set(fileGet.help.name, fileGet);
-    })
+
+   if (err) console.log(err);
+
+   var jsFiles = files.filter(f => f.split(".").pop() === "js");
+
+   if (jsFiles.length <= 0) {
+      console.log("Kon geen files vinden");
+      return;
+   }
+
+   jsFiles.forEach((f, i) => {
+
+      var fileGet = require(`./commands/${f}`);
+      console.log(`De file ${f} is geladen!`);
+
+      bot.commands.set(fileGet.help.name, fileGet);
+   })
 });
 
 bot.on("ready", async () => {
@@ -57,25 +57,26 @@ bot.on("message", async message => {
 });
 bot.on("guildMemberAdd", member => {
 
-   const channel = member.guild.channels.find("name", "👋🏻・welcome");
-   if (!channel) console.log("Dit kanaal bestaat niet");
+   const channel = member.guild.channels.find("name", "welkom");
+   if (!channel) console.log("Kan het kanaal niet vinden.");
 
-   var joinMessage = new discord.RichEmbed()
-      .setTitle(`Welkom  ${member.user.tag}!`)
-      .setDescription("Veel plezier op onze discord server.")
-      .setColor('#ffaa00')
-      .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
-      .setThumbnail(member.user.displayAvatarURL);
+   var joinEmbed = new discord.RichEmbed()
+       .setTitle(`Welkom  ${member.user.tag}!`)
+       .setDescription("Veel plezier op onze discord server.")
+       .setColor('#ffaa00')
+       .setFooter("Garnix Network", guild.displayAvatarURL).setTimestamp()
+       .setThumbnail(member.user.displayAvatarURL);
 
-   channel.send(joinMessage);
+   channel.send(joinEmbed);
+
 });
 
 bot.on("guildMemberAdd", member => {
 
-var role = member.guild.roles.find("name", "🌿 ・Lid")
+   var role = member.guild.roles.find("name", "🌿 ・Lid")
 
-if (!role) return;
+   if (!role) return;
 
-member.addRole(role);
+   member.addRole(role);
 });
 bot.login(process.env.token);

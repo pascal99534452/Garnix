@@ -30,7 +30,7 @@ bot.on("ready", async () => {
 
    console.log(`${bot.user.username} is online!`)
 
-   bot.user.setActivity("Excaid's Community", { type: "PLAYING" });
+   bot.user.setActivity("Garnix Network", { type: "PLAYING" });
 
 })
 

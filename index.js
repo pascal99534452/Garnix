@@ -57,15 +57,13 @@ bot.on("message", async message => {
 })
 bot.on("guildMemberAdd", member => {
 
-   const channell = "540922545247879170";
-
    var joinrank = member.guild.roles.find(r => r.name == "✘ | Discord member");
 
    if (!joinrank) return;
 
    member.addRole(joinrank);
 
-   var channelll = member.guild.channels.get(channell);
+   var channelll = guild.channels.find(channel => channel.name === "general").send
 
    var joinEmbed = new discord.RichEmbed()
          .setTitle(`Welkom  ${member.user.tag}!`)
@@ -74,6 +72,6 @@ bot.on("guildMemberAdd", member => {
          .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
          .setThumbnail(member.user.displayAvatarURL);
 
-   channelll.send(joinEmbed)
+   var channelll = guild.channels.find(channel => channel.name === "👋🏻・welcome").send(joinEmbed)
 });
 bot.login(process.env.token);

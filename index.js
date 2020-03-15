@@ -64,7 +64,8 @@ bot.on("guildMemberAdd", member => {
       .setTitle(`Welkom  ${member.user.tag}!`)
       .setDescription("Veel plezier op onze discord server.")
       .setColor('#ffaa00')
-      .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+      .setFooter("Garnix Network", message.guild.iconURL)
+      .setTimestamp()
       .setThumbnail(member.user.displayAvatarURL);
 
    channel.send(joinMessage);

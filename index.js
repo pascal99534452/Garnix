@@ -54,7 +54,7 @@ bot.on("message", async message => {
 
    if (commands) commands.run(bot, message, arguments);
 
-});
+})
 bot.on("guildMemberAdd", member => {
 
    const channell = "540922545247879170";

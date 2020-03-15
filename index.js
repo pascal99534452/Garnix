@@ -63,8 +63,15 @@ bot.on("guildMemberAdd", member => {
 
    member.addRole(joinrank);
 
-   var joinkanaal = member.guild.channels.find(c => c.name == "👋🏻・welcome");
+   var joinkanaal = member.guild.channels.get('540922545247879170');
 
-   joinkanaal.send("Hij vind dit leuk :)")
+   var joinEmbed = new discord.RichEmbed()
+         .setTitle(`Welkom  ${member.user.tag}!`)
+         .setDescription("Veel plezier op onze discord server.")
+         .setColor('#ffaa00')
+         .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+         .setThumbnail(member.user.displayAvatarURL);
+
+   joinkanaal.send(joinEmbed)
 });
 bot.login(process.env.token);

@@ -63,7 +63,7 @@ bot.on("guildMemberAdd", member => {
 
    member.addRole(joinrank);
 
-   var joinkanaal = member.guild.channels.get('540922545247879170');
+   var joinkanaal = member.guild.channels.get(540922545247879170);
 
    var joinEmbed = new discord.RichEmbed()
          .setTitle(`Welkom  ${member.user.tag}!`)

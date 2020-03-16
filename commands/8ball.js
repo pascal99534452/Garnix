@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const customisation = require('../customisation.json');
 
 module.exports.run = async (bot, message, args) => {
     if(!args[2]) return message.channel.send(":no_entry: | Voer een complete vraag in aub!");

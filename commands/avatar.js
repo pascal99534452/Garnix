@@ -1,18 +1,18 @@
-const discord = require("discord.js");
+const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
-    var member = message.member.user.tag;
-    
-    var botEmbed = new discord.RichEmbed()
-        .setTitle("Avatar" + message.author)
-        .setImage(message.author.displayAvatarURL)
-        .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
-        .setColor('#ffaa00');
 
-    return message.channel.send(botEmbed);
+    const user = message.mentions.users.first() || message.author;
+
+    const avatarEmbed = new Discord.RichEmbed()
+        .setColor('#ffaa00')
+        .setTitle("Avatar")
+        .setImage(user.avatarURL)
+        .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
+    message.channel.send(avatarEmbed);
 
 }
 
 module.exports.help = {
-name: "avatar"
+    name: "avatar"
 }

@@ -80,4 +80,4 @@ bot.on("guildMemberAdd", member => {
 
    member.addRole(role);
 });
-bot.login(botConfig.token);
+bot.login(process.env.token);

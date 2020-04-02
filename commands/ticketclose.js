@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
   var sluitEmbed = new discord.RichEmbed()
                 .setTitle("Ticket Sluiten")
                 .setColor('#ffaa00')
-                .setDescription("Weet u zeker dat u dit ticket wilt sluiten? \n\nOm te bevestigen stuur:\n-bevestig")
+                .setDescription("Weet u zeker dat u dit ticket wilt sluiten? \n\nOm te bevestigen stuur:\n`-bevestig`")
                 .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
  
    if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`Dit is geen ticket-kanaal.`);

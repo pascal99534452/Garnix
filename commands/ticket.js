@@ -62,7 +62,7 @@ module.exports.run = async (bot, message, args) => {
  
 
             var embedParent = new discord.RichEmbed()
-                .setTitle("Minetopia Leaks")
+                .setTitle("Ticket Systeem")
                 .setDescription("Heeft u even geduld, een stafflid zal z.s.m komen. Als er binnen 30 minuten niet gereageerd word, mag u taggen. We zullen uw ticket z.s.m behandelen.")
                 .addField("Ticket Eigenaar:", message.author)
                 .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()

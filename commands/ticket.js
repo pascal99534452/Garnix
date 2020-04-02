@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
             return message.channel.send(embed);
         }
 
-    });
+    };
 
     // Als ticket return code.
     if (bool == true) return;
@@ -75,7 +75,7 @@ module.exports.run = async (bot, message, args) => {
     }).catch(err => {
         message.channel.send("Er is iets fout gelopen.");
     });
-
+{
 }
 
 module.exports.help = {

@@ -17,12 +17,14 @@ module.exports.run = async (bot, message, args) => {
     await message.guild.channels.forEach((channel) => {
 
         // Als ticket is gemaakt, zend bericht.
-        if (channel.name == "ticket-"+userDiscriminator.toLowerCase()) {
+        if (message.guild.channels.find(c => c.name === "ticket-"+ message.author.discriminator)) {
+            const embed = new discord.RichEmbed()
+            .setTitle("Ticket Systeem")
+            .setDescription("Jij hebt mommenteel al een ticket geopend.")
+            .setColor('#ffaa00')
+            .setFooter("Garnix Network", message.guild.iconURL).setTimestamp();
 
-            message.channel.send(":no_entry: | Je hebt al een ticket geopend!");
-
-            bool = true;
-
+            return message.channel.send(embed);
         }
 
     });
@@ -64,7 +66,7 @@ module.exports.run = async (bot, message, args) => {
             var embedParent = new discord.RichEmbed()
                 .setTitle("Garnix Network")
                 .setDescription("Heeft u even geduld, een stafflid zal z.s.m komen. Als er binnen 30 minuten niet gereageerd word, mag je taggen. We zullen uw ticket z.s.m behandelen.")
-                .addField("Ticket Eigenaar:", userName)
+                .addField("Ticket Eigenaar:", message.author)
                 .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
                 .setColor('#ffaa00');
 

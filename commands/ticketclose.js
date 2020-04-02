@@ -25,22 +25,6 @@ module.exports.run = async (bot, message, args) => {
           }, 4000);
         });
     });
-    }
-    {
-
-    var embedCloseTicket = new discord.RichEmbed()
-        .setTitle("Ticket Systeem")
-        .addField("Ticket naam:", message.channel.name)
-        .addField("Gesloten door:", message.author)
-        .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
-        .setColor('#ffaa00');
-
-    // Vind kanaal voor de logs.
-    var logChannel = message.guild.channels.find("name", "⛔・logs");
-    if (!logChannel) return message.channel.send("Kanaal bestaat niet");
-
-    logChannel.send(embedCloseTicket);
-
 }
 
 module.exports.help = {

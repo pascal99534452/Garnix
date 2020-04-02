@@ -14,15 +14,12 @@ module.exports.run = async (bot, message, args) => {
     var bool = false;
 
     // Kijk na als ticket al gemaakt is.
-    await message.guild.channels.forEach((channel) => {
-
-        // Als ticket is gemaakt, zend bericht.
-        if (message.guild.channels.find(c => c.name === "ticket-"+ message.author.discriminator)) {
+        if (message.guild.channels.find(c => c.name === "ticket-" + message.author.discriminator)) {
             const embed = new discord.RichEmbed()
             .setTitle("Ticket Systeem")
             .setDescription("Jij hebt mommenteel al een ticket geopend.")
             .setColor('#ffaa00')
-            .setFooter("Garnix Network", message.guild.iconURL).setTimestamp();
+            .setFooter("Garnix Network", message.guild.iconURL).setTimestamp()
 
             return message.channel.send(embed);
         }

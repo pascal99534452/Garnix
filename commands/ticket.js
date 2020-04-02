@@ -39,7 +39,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(embedCreateTicket)
 
     // Maak kanaal en zet in juiste categorie.
-    message.guild.createChannel(userName, "text").then((createdChan) => { // Maak kanaal
+    message.guild.createChannel("ticket-"+ userName, "text").then((createdChan) => { // Maak kanaal
 
         createdChan.setParent(categoryId).then((settedParent) => { // Zet kanaal in category.
 

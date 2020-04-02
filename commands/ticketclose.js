@@ -27,7 +27,6 @@ module.exports.run = async (bot, message, args) => {
     });
     }
     {
-    var userName = message.author.username;
 
     var embedCloseTicket = new discord.RichEmbed()
         .setTitle("Ticket Systeem")

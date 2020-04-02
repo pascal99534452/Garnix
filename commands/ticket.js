@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     message.guild.channels.forEach((channel) => {
  
         // Als ticket is gemaakt, zend bericht.
-        const existingTicket = message.guild.channels.find(c => c.name === ticket-userName);
+        const existingTicket = message.guild.channels.find(c => c.name === "ticket"-userName);
         if (existingTicket) {
     message.channel.send(":no_entry: | Je hebt al een ticket open staan!")
     }

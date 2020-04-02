@@ -71,7 +71,7 @@ module.exports.run = async (bot, message, args) => {
     }).catch(err => {
         message.channel.send("Er is iets fout gegaan!");
     });
- 
+});
 }
  
 module.exports.help = {

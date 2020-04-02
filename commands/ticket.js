@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     await message.guild.channels.forEach((channel) => {
 
         // Als ticket is gemaakt, zend bericht.
-        if (channel.name == userName.toLowerCase()) {
+        if (channel.name == "ticket-"+userDiscriminator.toLowerCase()) {
 
             message.channel.send(":no_entry: | Je hebt al een ticket geopend!");
 

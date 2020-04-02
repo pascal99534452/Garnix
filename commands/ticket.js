@@ -15,15 +15,10 @@ module.exports.run = async (bot, message, args) => {
     message.guild.channels.forEach((channel) => {
  
         // Als ticket is gemaakt, zend bericht.
-        if (channel.name == "ticket-" + userName) {
- 
-            message.channel.send(":no_entry: | U heeft al een ticket openstaan!");
- 
-            bool = true;
- 
-        }
- 
-    });
+        const existingTicket = message.guild.channels.find(c => c.name === ticket-userName);
+        if (existingTicket) {
+    message.channel.send(":no_entry: | Je hebt al een ticket open staan!")
+    }
  
     // Als ticket return code.
     if (bool == true) return;

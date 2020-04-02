@@ -36,8 +36,9 @@ bot.on("ready", async () => {
 
 
 bot.on("message", async message => {
+   
+   if (!message.content.startsWith(prefix)) return;
 
-   // Als bot bericht stuurt stuur dan return
    if (message.author.bot) return;
 
    if (message.channel.type === "dm") return;
